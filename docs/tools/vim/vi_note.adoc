@@ -1,0 +1,49 @@
+---
+layout: default
+title: navigating
+nav_order: 999
+parent: Vim
+grand_parent: Tools
+---
+== Vi Notes
+
+==== 1. Help
+    :help
+
+
+include::vi_tips.adoc[]
+include::vi_buffers.adoc[]
+include::vi_01_navigating.adoc[]
+
+=== Customize
+===== Set caps key to escape key
+    setxkbmap -option caps:escape
+
+===== Install awesome .vi
+
+===== Remap Enter to o <ESC>
+    nmap <S-Enter> O<Esc>
+    nmap <CR> o<Esc>
+
+==== operator
+
+    :help operator
+. c
+. d
+. y
+. ~n
+.g~
+.gu
+.gU
+
+THIS IS A SENTENCE.
+
+== Appendex
+include::vi_symbols_meaning.adoc[]
+include::nerdtree_note.adoc[]
+
+Cis Change Inner Sentence
+CAS CHANGE A SENTENCE
+
+das delete a sentence
+dis delete inner sentence

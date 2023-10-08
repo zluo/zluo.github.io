@@ -1,6 +1,6 @@
 ---
 layout: default
-title: vim
+title: Vim
 nav_order: 3
 has_children: true
 permalink: /docs/tools/vim

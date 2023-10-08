@@ -1,0 +1,15 @@
+---
+layout: default
+title: navigating
+nav_order: 999
+parent: Vim
+grand_parent: Tools
+---
+=== Vim Buffers
+. list buffers
+
+   ls / buffers / files
+
+. Open buffers
+
+      b <number>

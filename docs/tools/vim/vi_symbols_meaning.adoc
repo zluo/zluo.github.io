@@ -1,0 +1,43 @@
+---
+layout: default
+title: navigating
+nav_order: 999
+parent: Vim
+grand_parent: Tools
+---
+==== 2. Understanding All Those Ugly Symbols
+
+. %
+
+   1.1 find pair of braces.
+   1.2 prefix of search, means find backward
+
+. ~ Tilde (squiggly or twiddle)
+
+  ~ means approximately or similar to
+
+  :s/aaa/bbb
+  :s/ccc/~
+  find ccc and replace with last time replacement.
+
+    switch first letter of word to upper/lowercase
+
+. ^ Caret    beginning of the line (0)
+
+. $          ending of the line
+
+. & (Ampersand, and)
+and by itself.
+
+   In global replace, it mean replace what you search.
+
+
+. # (hash, hash-mark, number sign, pound, octothorpe)
+
+   Find current word in backward direction.
+
+. ? search
+
+. . repeat
+
+. * (asterisk) Find current word

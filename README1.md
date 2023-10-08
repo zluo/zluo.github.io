@@ -30,7 +30,7 @@
 
 5. config url in _config.yml
 ```
-    zluo.github.io
+    xxxx.github.io
 ```
 
 6.  Run 

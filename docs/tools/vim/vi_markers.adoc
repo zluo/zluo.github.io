@@ -1,0 +1,14 @@
+---
+layout: default
+title: navigating
+nav_order: 999
+parent: Vim
+grand_parent: Tools
+---
+== Vi Marker Notes
+==== Mark a marker
+    m[a-zA-z]
+
+==== Jump to a marker
+    '[a-zA-Z]
+

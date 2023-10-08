@@ -1,0 +1,28 @@
+---
+layout: default
+title: navigating
+nav_order: 999
+parent: Vim
+grand_parent: Tools
+---
+==== Open with multiple files
+    vi *.log
+
+==== Buffer List
+    :ls
+
+==== Buffer List operations
+    :bnext
+    :bpre
+    :bf
+    :bl
+
+==== Split Window With Buffer List
+
+split screen horizontally
+
+       :sp
+
+split screen vertically
+
+        :vsplit

@@ -1,0 +1,38 @@
+---
+layout: default
+title: navigating
+nav_order: 999
+parent: Vim
+grand_parent: Tools
+---
+=== Deleting Text
+
+    <Del> or
+    x	Delete [count] characters under and after the cursor
+    X	Delete [count] characters before the cursor
+
+**d{motion}	Delete text that {motion} moves over**
+    
+    dw
+    dt;
+
+**d	Delete [count] lines**
+
+    d5d      // delete 5 lines
+    dG       // delete from current line to the end of the file.
+    dgg      // delete to the beginning of the file.
+    D or d^  //delete the characters under the cursor until the end of the line
+
+**Delete in Visual Mode**
+
+    {Visual}x or
+    {Visual}d	Delete the highlighted text (for {Visual} see Selecting Text).
+    {Visual}CTRL-H or
+    {Visual}	When in Select mode: Delete the highlighted text
+    {Visual}X or
+    {Visual}D	Delete the highlighted lines
+
+** Delete in Command Mode**
+
+     :[range]d[elete]	Delete [range] lines (default: current line)
+     :[range]d[elete] {count}	Delete {count} lines, starting with [range]

@@ -1,0 +1,22 @@
+---
+layout: default
+title: navigating
+nav_order: 999
+parent: Vim
+grand_parent: Tools
+---
+=== VimScript Notes
+
+==== Config vim
+        git clone --depth=1 https://github.com/zluo/vimrc.git ~/.vim_runtime
+        sh ~/.vim_runtime/install_awesome_vimrc.sh
+
+===== ~/.vimrc File
+
+
+
+
+
+__ Reference __
+
+link:http://learnvimscriptthehardway.stevelosh.com/chapters/00.html[Learn vimscript Hard way]

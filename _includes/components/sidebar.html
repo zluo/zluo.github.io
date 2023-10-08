@@ -26,7 +26,21 @@
     {{ nav_footer_custom }}
   {% else %}
     <footer class="site-footer">
-      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+      <a class="js-toggle-dark-mode">dark scheme</a>
     </footer>
   {% endif %}
+<!--button class="btn js-toggle-dark-mode">Preview dark color scheme</button-->
+<script>
+const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
+
+jtd.addEvent(toggleDarkMode, 'click', function(){
+  if (jtd.getTheme() === 'dark') {
+    jtd.setTheme('light');
+    toggleDarkMode.textContent = 'dark scheme';
+  } else {
+    jtd.setTheme('dark');
+    toggleDarkMode.textContent = 'light scheme';
+  }
+});
+</script>
 </div>

@@ -1,0 +1,25 @@
+---
+layout: default
+title: navigating
+nav_order: 999
+parent: Vim
+grand_parent: Tools
+---
+=== Show Register History
+
+=== Show Search History
+
+    :his /
+
+=== Show Buffer
+
+    :ls
+
+=== Show Mark History
+    :marks
+
+=== Show Command History
+
+
+=== Show registers
+    :reg

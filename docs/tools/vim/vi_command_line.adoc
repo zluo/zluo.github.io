@@ -1,0 +1,27 @@
+---
+layout: default
+title: navigating
+nav_order: 999
+parent: Vim
+grand_parent: Tools
+---
+==== Go to Shell
+    Ctrl + z
+
+    fg          //return to vi
+
+==== Show Commandline Buffers
+    q:
+
+==== Show Search History
+    q/
+
+==== **Switch from Command Mode to Commandline window**
+In command mode, ctrl + f list commands.
+    ctrl + f
+
+==== Run Last Command
+    @:
+
+==== Edit Commandline Buffers
+
