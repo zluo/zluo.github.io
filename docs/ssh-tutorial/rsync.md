@@ -4,56 +4,33 @@ title: rsync
 parent: SSH Tutorial
 nav_order: 3
 ---
-# rsync 命令
+## rsync 命令
 
-## 简介
+rsync (remote sync) 用于在本地与远程计算机之间，或者两个本地目录之间件同步文件。 rsync 仅传输变动的部分
 
-rsync 是一个常用的 Linux 应用程序，用于文件同步。
-
-它可以在本地计算机与远程计算机之间，或者两个本地目录之间同步文件（但不支持两台远程计算机之间的同步）。它也可以当作文件复制工具，替代`cp`和`mv`命令。
-
-它名称里面的`r`指的是 remote，rsync 其实就是“远程同步”（remote sync）的意思。与其他文件传输工具（如 FTP 或 scp）不同，rsync 的最大特点是会检查发送方和接收方已有的文件，仅传输有变动的部分（默认规则是文件大小或修改时间有变动）。
-
-虽然 rsync 不是 SSH 工具集的一部分，但因为也涉及到远程操作，所以放在这里一起介绍。
-
-## 安装
-
-如果本机或者远程计算机没有安装 rsync，可以用下面的命令安装。
-
+### 安装
 ```bash
-# Debian
 $ sudo apt-get install rsync
-
-# Red Hat
-$ sudo yum install rsync
-
-# Arch Linux
-$ sudo pacman -S rsync
 ```
 
-注意，传输的双方都必须安装 rsync。
+{:.note }
+传输的双方都必须安装 rsync。
 
-## 基本用法
+### 基本用法
 
 rsync 可以用于本地计算机的两个目录之间的同步。下面就用本地同步举例，顺便讲解 rsync 几个主要参数的用法。
 
-### `-r`参数
+### `-r` 参数表示递归，即包含子目录
 
 本机使用 rsync 命令时，可以作为`cp`和`mv`命令的替代方法，将源目录拷贝到目标目录。
 
 ```bash
 $ rsync -r source destination
-```
-
-上面命令中，`-r`表示递归，即包含子目录。注意，`-r`是必须的，否则 rsync 运行不会成功。`source`目录表示源目录，`destination`表示目标目录。上面命令执行以后，目标目录下就会出现`destination/source`这个子目录。
-
-如果有多个文件或目录需要同步，可以写成下面这样。
-
-```bash
+#multiple folders
 $ rsync -r source1 source2 destination
 ```
 
-上面命令中，`source1`、`source2`都会被同步到`destination`目录。
+`-r`是必须的，否则 rsync 运行不会成功。命令执行后，目标目录下就会出现`destination/source`这个子目录。
 
 ### `-a`参数
 
@@ -73,15 +50,12 @@ $ rsync -a source/ destination
 
 上面命令执行后，`source`目录里面的内容，就都被复制到了`destination`目录里面，并不会在`destination`下面创建一个`source`子目录。
 
-### `-n`参数
-
-如果不确定 rsync 执行后会产生什么结果，可以先用`-n`或`--dry-run`参数模拟执行的结果。
+### `-n`参数模拟执行的结果
 
 ```bash
 $ rsync -anv source/ destination
 ```
-
-上面命令中，`-n`参数模拟命令执行的结果，并不真的执行命令。`-v`参数则是将结果输出到终端，这样就可以看到哪些内容会被同步。
+`-n`参数模拟命令执行的结果，并不真的执行命令。`-v`参数则是将结果输出到终端，这样就可以看到哪些内容会被同步。
 
 ### `--delete`参数
 

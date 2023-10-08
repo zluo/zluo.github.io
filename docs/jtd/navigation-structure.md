@@ -2,6 +2,7 @@
 layout: default
 title: Navigation Structure
 nav_order: 5
+parent: JTD
 ---
 
 # Navigation Structure
@@ -239,7 +240,7 @@ Currently, the navigation structure is limited to 3 levels: grandchild pages can
 
 ## Auxiliary Links
 
-To add auxiliary links to your site (in the upper right on all pages), add it to the `aux_links` [configuration option]({% link docs/configuration.md %}#aux-links) in your site's `_config.yml` file.
+To add auxiliary links to your site (in the upper right on all pages), add it to the `aux_links` [configuration option]({% link docs/jtd/configuration.md %}#aux-links) in your site's `_config.yml` file.
 
 ### Example (auxiliary links)
 {: .no_toc }
@@ -259,7 +260,7 @@ aux_links:
 New (v0.4.0)
 {: .label .label-green }
 
-To add external links to the navigation, add them to the `nav_external_links` [configuration]({% link docs/configuration.md %}) option in your site's `_config.yml` file.
+To add external links to the navigation, add them to the `nav_external_links` [configuration]({% link docs/jtd/configuration.md %}) option in your site's `_config.yml` file.
 External links will appear in the navigation after the links to ordinary pages, but before any collections.
 
 ### Example (external navigation links)

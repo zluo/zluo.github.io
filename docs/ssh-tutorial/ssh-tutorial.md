@@ -7,12 +7,9 @@ permalink: /docs/ssh-tutorial
 ---
 
 
-SSH（Secure Shell）是一种网络协议，用于两台计算机之间的加密通信，并且支持各种身份验证机制。
+SSH（Secure Shell）是用于两台计算机之间的加密通信的一种网络协议。
 
-
-### SSH 架构
-
-SSH is (Server - Client）Mode. client）
+SSH use (Server - Client）Mode. 
 
 - Client's OpenSSH 的实现为 ssh
 
