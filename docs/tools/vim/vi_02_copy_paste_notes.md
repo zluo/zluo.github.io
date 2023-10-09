@@ -44,4 +44,4 @@ grand_parent: Tools
 
     :reg
 
-Also see link:vi_03_registers.adoc[vi_register notes]
+Also see [vim registers](../vi_03_registers)

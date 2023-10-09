@@ -333,3 +333,41 @@ This is content inside a `<details>` dropdown.
 - [ ] Milk
 
 </details>
+
+### math symbols start with $$ 
+
+- $$\beta$$: \beta
+- $$\alpha$$: \alpha 
+- $$\lambda$$: \lambda
+- $$\pi$$: \pi
+- Bar: \bar{A} $$\bar{A}$$
+- Hat: \hat{Y} $$\hat{Y}$$ 
+- $$\sqrt{}$$: \sqrt{}
+- Subscript: _{}     $$H_{2}O$$
+- Superscript: ^{}  $$X^2$$
+- $$\sum$$: \sum
+- $$\int$$: \int
+- $$\infty$$: \infty
+- $$\int _{\infty} ^{\infty}$$: \int _{\infty} ^{\infty}
+
+- $$ \sum \limits _j ^p$$: \sum \limits _j ^p
+- $$ \sum _j ^p$$: \sum _j ^p
+- $$\frac {A} {B} $$: \frac
+- $$\cup$$: \cup
+- $$\cap$$: \cap
+
+[symbol links](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
+
+$$this_{is}^{inline}$$
+
+
+$$X^{2}$$
+
+$$ \hat{Y}=\hat{\beta}_0 + \sum \limits _{j=1} ^p X_{j}\hat{\beta}_{j} $$
+
+- Sqrt: \sqrt
+
+    > $$ c = \sqrt{a^2 + b^2}$$
+
+- Bar: \bar
+    > $$ P(A) + P(\bar{A}) = 1 $$

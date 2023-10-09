@@ -63,7 +63,7 @@ When the wind was in the east a smell came across the harbour from the shark fac
 
 "Five and you nearly were killed when I brought the fish in too green and he nearly tore the boat to pieces. Can you remember?"
 
-"I can remember the tail slapping and banging and the thwart breaking and the noise of the clubbing. I can remember you throwing me into the bow where the wet coiled lines were and feeling the whole boat shiver and the noise of you clubbing him like chopping a tree down and the sweet blood smell all over me."
+"I can remember the tail slapping and banging and the thwart(横的) breaking and the noise of the clubbing. I can remember you throwing me into the bow where the wet coiled lines were and feeling the whole boat shiver and the noise of you clubbing him like chopping a tree down and the sweet blood smell all over me."
 
 "Can you really remember that or did I just tell it to you?"
 
@@ -119,7 +119,8 @@ The old man looked at him with his sun-burned, confident loving eyes.
 
 They picked up the gear from the boat. The old man carried the mast on his shoulder and the boy carried the wooden box with the coiled, hard-braided brown lines, the gaff and the harpoon with its shaft. The box with the baits was under the stern of the skiff along with the club that was used to subdue the big fish when they were brought alongside. No one would steal from the old man but it was better to take the sail and the heavy lines home as the dew was bad for them and, though he was quite sure no local people would steal from him, the old man thought that a gaff and a harpoon were needless temptations to leave in a boat.
 
-They walked up the road together to the old man's shack and went in through its open door. The old man leaned the mast with its wrapped sail against the wall and the boy put the box and the other gear beside it. The mast was nearly as long as the one room of the shack. The shack was made of the tough bud-shields of the royal palm which are called guano and in it there was a bed, a table, one chair, and a place on the dirt floor to cook with charcoal. On the brown walls of the flattened, overlapping leaves of the sturdy fibered guano there was a picture in color of the Sacred Heart of Jesus and another of the Virgin of Cobre. These were relics of his wife. Once there had been a tinted photograph of his wife on the wall but he had taken it down because it made him too lonely to see it and it was on the shelf in the corner under his clean shirt.
+They walked up the road together to the old man's shack and went in through its open door. The old man leaned the mast with its wrapped sail against the wall and the boy put the box and the other gear beside it. The mast was nearly as long as the one room of the shack. The shack was made of the tough bud-shields of the royal palm which are called guano and in it there was a bed, a table, one chair, and a place on the dirt floor to cook with charcoal. On the brown walls of the flattened, overlapping leaves of the sturdy fibered guano there was a picture in color of the Sacred Heart of Jesus and another of the Virgin of Cobre. These were relics(遗迹) of his wife. Once there had been a tinted photograph of his wife on the wall but he had taken it down because it made him too lonely to see it and it was on the shelf in the corner under his clean shirt.
+
 
 "What do you have to eat?" the boy asked.
 
@@ -143,7 +144,7 @@ There was no cast net and the boy remembered when they had sold it. But they wen
 
 The boy did not know whether yesterday's paper was a fiction too. But the old man brought it out from under the bed.
 
-"Perico gave it to me at the bodega," he explained.
+"Perico gave it to me at the bodega(酒窖)," he explained.
 
 "I'll be back when I have the sardines. I'll keep yours and mine together on ice and we can share them in the morning. When I come back you can tell me about the baseball."
 
@@ -185,7 +186,7 @@ The boy left him there and when he came back the old man was still asleep.
 
 "Wake up old man," the boy said and put his hand on one of the old man's knees.
 
-The old man opened his eyes and for a moment he was coming back from a long way away. Then he smiled.
+**The old man opened his eyes and for a moment he was coming back from a long way away**. Then he smiled.
 
 "What have you got?" he asked.
 
@@ -255,6 +256,7 @@ Where did you wash? the boy thought. The village water supply was two streets do
 
 "I would like to take the great DiMaggio fishing," the old man said. "They say his father was a fisherman. Maybe he was as poor as we are and would understand."
 
+### Mark 2023-10-08
 "The great Sisler's father was never poor and he, the father, was playing in the big leagues when he was my age."
 
 "When I was your age I was before the mast on a square rigged ship that ran to Africa and I have seen lions on the beaches in the evening."
