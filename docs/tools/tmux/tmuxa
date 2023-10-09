@@ -1,0 +1,10 @@
+
+#! /bin/bash
+if [ $# -gt 0 ]
+  then
+    SESSION=$1
+  else
+    SESSION=$PRE
+fi
+echo attaching SESSION: $SESSION
+tmux a  -t $SESSION

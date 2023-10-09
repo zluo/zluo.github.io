@@ -1,0 +1,171 @@
+# LPIC-1 Notes
+## 1. System Architecture
+### 1.1 Device Management: The Linux Boot Process
+<pre>
+ BIOS -> MBR (Master Boot Record)-> GRUB(Grand Unified Bootloader) -> Kernel -> Init -> Run Level
+</pre>
+
+<pre>
+GRUB load images from  /boot/grub
+</pre>
+### 1.2 Troublesooting Boot Related log
+<pre>
+ /var/log  dmesg, kern.log, boot.log
+</pre>
+
+**Find block devices**
+<pre>
+lsblk
+</pre>
+### 1.3 Run Levels
+<pre>
+0: Halt
+1: Single user mode
+2: Multi-user, without NFS
+3: Full multi-user mode
+4: Unused
+5: X11
+6: Reboot
+</pre>
+
+**Find Default Run Level**
+<pre>
+  /etc/init/rc-sysinit.conf
+  env DEFAULT_RUNLEVEL=2
+  
+  /etc/init/ contains automatically loaded configuration
+</pre>
+
+**Systemd** Process Manager
+<pre>
+  /etc/systemd/system/default.target
+</pre>
+<pre>
+  systemctl list-units
+</pre>
+
+##1.4 Pseudo Filesystems
+<pre>
+  /dev contains configuration files for installed packages on systemd systems.
+</pre>
+
+<pre>
+  /sys represent the sysfs and contain links to devices.
+  /sys/class/block include links to block devices
+  /sys/class/printer contain links to printers
+</pre>
+
+**/proc** contains runtime system infomations
+<pre>
+  cat /proc/cpuinfo
+</pre>
+
+## 1.4 Device Management
+When device is hot-plugin, it will load related **kernal modules**.
+
+**Manually define devices**
+<pre>
+/etc/udev/rules.d/
+/run/udev/rules.d/
+/usr/lib/udev/rules.d/
+</pre>
+
+**List All Current Installed Modules**
+<pre>
+  find /lib/modules/$(uname -r) -type f -iname "*.ko"
+</pre>
+
+**List Loaded Modules**
+<pre>
+lsmod
+</pre>
+
+**Load Installed Module**
+<pre>
+  sudo modprobe lp  load printer driver
+</pre>
+
+**Remove the Module**
+<pre>
+  sudo modprobe -r lp
+</pre>
+
+**List Hardwares**
+<pre>
+  sudo lshw
+  
+  example:
+    sudo modprobe ath9k //load WIFI
+</pre>
+
+#2. Topic 102: Linux Installation and Package Management
+## 2.1 Disk Partitioning
+## 2.2 Package Managers
+Two tier infrastructure, Manage package local and remote 
+
+###2.2.1 Ubuntu Local:dpkg /rpm
+If you've already download package. you can manage it locally through **dpkg**
+
+**Install package**
+<pre>
+  dpkg -i package.deb
+</pre>
+
+**Unpack package**
+<pre>
+  dpkg --unpack packag.deb
+</pre>
+
+**Remove/Purge/Reconfigure package**
+<pre>
+  dpkg -r packag.deb
+  
+  dpkg -P packag.deb
+  
+  dpkg-reconfigure packag.deb
+</pre>
+
+**List package**
+<pre>
+  dpkg -l
+  
+  dpkg --get-selections
+  
+  dpkg -s zip   //show detail
+</pre>
+
+###2.2.2 Repositories: APT / yum
+
+**Registered Repositories**
+<pre>
+  /etc/apt/source.list
+</pre>
+
+**Package Manager: aptitude**
+<pre>
+  sudo aptitude
+</pre>
+
+**Install**
+<pre>
+  sudo apt-get install vlc
+</pre>
+
+**remove**
+<pre>
+  sudo apt-get remove vlc
+</pre>
+
+**apt-cache commands**
+<pre>
+  apt-cache showpkg vlc
+</pre>
+
+****
+<pre>
+  
+</pre>
+
+
+
+

@@ -6,10 +6,10 @@ description: "Windows of see the outside world"
 permalink: /
 ---
 ### READING
-[阮一峰] | [DocuSeal] | [知乎] |
+[阮一峰] | [DocuSeal] | [知乎] | 
  
 ### AI
-[ChatGPT] | [NoteAI] | [作文批改]
+[ChatGPT] | [NoteAI] | [作文批改] | [Bard] |
 
 ### TECH
 [Jekyll] | [MarkDown]
@@ -38,3 +38,4 @@ permalink: /
 [作文批改]: https://www.essay.art/ielts
 [知乎]: https://www.zhihu.com/
 [MarkDown]: https://www.markdownguide.org/
+[Bard]: https://bard.google.com/

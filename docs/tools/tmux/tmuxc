@@ -1,0 +1,107 @@
+#! /bin/bash
+if [ -z "$1" ] 
+  then
+    MAX=2
+  else
+    MAX=$1
+fi
+export SESSION="$PRE"
+timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
+tmux -2 kill-session -t $SESSION
+tmux -2 new-session -d -s $SESSION
+
+# Setup a window for tailing log files
+function create_window(){
+	tmux new-window -t $SESSION:$1 -n "STACK$1"
+	tmux split-window -h
+
+
+	tmux select-pane -t 0
+	tmux send-keys "$TSN" C-m
+	tmux send-keys "echo $PRE" C-m
+	tmux send-keys "ssh1 be-0$1" C-m
+	tmux send-keys "cd /opt/wildfly/esl-backend/log/" C-m
+	tmux send-keys "tail -f server.log" C-m
+#	tmux send-keys "grep -B3 -P '\tat' /opt/wildfly/esl-backend/log/server.log > ~/berr_${timestamp}.log" C-m
+
+	tmux select-pane -t 1
+	tmux send-keys "$TSN" C-m
+	tmux send-keys "echo $PRE" C-m
+	tmux send-keys "ssh1 be-0$1" C-m
+	tmux send-keys "cd /opt/wildfly/esl-platform/log/" C-m
+	tmux send-keys "tail -f server.log" C-m
+#	tmux send-keys "grep -B3 -P '\tat' /opt/wildfly/esl-platform/log/server.log > ~/perr_${timestamp}.log" C-m
+}
+
+for ((i=1; i<= $MAX; ++i))
+do
+   create_window ${i}
+done
+
+
+# setup Document Engine logs
+tmux new-window -t $SESSION:5 -n 'DELogs'
+tmux split-window -h
+
+tmux select-pane -t 0
+tmux send-keys "$TSN" C-m
+tmux send-keys "echo $PRE" C-m
+tmux send-keys "ssh1 de-01" C-m
+tmux send-keys "cd /home/silanis/de/logs" C-m
+tmux send-keys "grep -B3 -P '\tat'  decore-esl-encrypted.log" C-m
+
+tmux select-pane -t 1
+tmux send-keys "$TSN" C-m
+tmux send-keys "echo $PRE" C-m
+tmux send-keys "ssh1 de-02" C-m
+tmux send-keys "cd /home/silanis/de/logs" C-m
+tmux send-keys "grep -B3 -P '\tat'  decore-esl-encrypted.log" C-m
+
+#tmux split-window -v
+#tmux resize-pane -D 20
+#tmux send-keys "grep -B3 -P '\tat' /vagrant/maximus-mojo.log" C-m
+# Setup a CoffeeScript compiler/watchdog pane
+#tmux select-pane -t 0
+#tmux split-window -v
+#tmux resize-pane -D 20
+#tmux send-keys "coffee -o /vagrant/root/static/js/ -cw /vagrant/root/coffee/" C-m
+
+# Setup a NMON  window
+tmux new-window -t $SESSION:6 -n 'NMON' 
+tmux split-window -h
+tmux select-pane -t 0
+tmux split-window -v
+tmux select-pane -t 2
+tmux split-window -v
+
+tmux select-pane -t 0
+tmux send-keys "$TSN" C-m
+tmux send-keys "ssh1 be-01" C-m
+tmux send-keys "nmon" C-m
+tmux send-keys "cmn" C-m
+
+tmux select-pane -t 1
+tmux send-keys "$TSN" C-m
+tmux send-keys "ssh1 be-02" C-m
+tmux send-keys "nmon" C-m
+tmux send-keys "cmn" C-m
+
+tmux select-pane -t 2
+tmux send-keys "$TSN" C-m
+tmux send-keys "ssh1 de-01" C-m
+tmux send-keys "nmon" C-m
+tmux send-keys "cmn" C-m
+
+
+tmux select-pane -t 3
+tmux send-keys "$TSN" C-m
+tmux send-keys "ssh1 de-02" C-m
+tmux send-keys "nmon" C-m
+tmux send-keys "cmn" C-m
+
+# Set default window
+tmux select-window -t $SESSION:1
+
+# Attach to session
+tmux -2 attach-session -t $SESSION
+

@@ -1,0 +1,13 @@
+
+#! /bin/bash
+#if [$# -gt 0] then  SESSION="$1"
+#fi
+if [ $# -gt 0 ]
+  then
+    SESSION=$1
+  else
+    SESSION=$PRE
+fi
+echo Killing SESSION: $SESSION
+tmux -2 kill-session -t $SESSION
+

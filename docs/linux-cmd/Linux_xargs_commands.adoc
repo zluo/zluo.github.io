@@ -1,0 +1,5 @@
+== xargs examples
+
+=== find out all the .png files and archives with tar
+
+    $ find Pictures/tecmint/ -name "*.png" -type f -print0 | xargs -0 tar -cvzf images.tar.gz

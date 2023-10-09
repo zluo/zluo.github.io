@@ -1,0 +1,12 @@
+== Proxy Server Notes
+
+
+=== Install dante socks server
+
+
+=== Install squid proxy Server
+
+    sudo apt install squid
+
+    sudo systemctl start squid
+    sudo systemctl status squid
