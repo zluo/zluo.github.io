@@ -44,4 +44,17 @@ grand_parent: Tools
 
     :reg
 
+
+### Macro
+
+    #start macro
+    qa
+
+    #stop macro
+    q
+
+    #apply macro
+    @a
+
 Also see [vim registers](../vi_03_registers)
+

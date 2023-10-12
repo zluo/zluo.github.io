@@ -1,16 +1,17 @@
 ---
 layout: default
-title: navigating
-nav_order: 999
+title: Vim Mode
+nav_order: 4
 parent: Vim
 grand_parent: Tools
 ---
-==== Normal Mode
+
+### Normal Mode
 normal mode equivelent to a loop
 
     [range]normal A;
 
-==== Insert Mode
+### Insert Mode
     C-h     Delete back one character(backspace)
     C-w     Delete back one word.
     C-u     Delete back to start of line
@@ -19,9 +20,10 @@ normal mode equivelent to a loop
 
     C-a     paste previous insert
     C-@     paste previous insert, exit insert mode
+    
 
 
-==== Visual Mode
+### Visual Mode
 Visual Mode allow us define a selection and then operate upon it.
 
     v       //character wise

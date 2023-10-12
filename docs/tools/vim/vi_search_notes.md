@@ -1,26 +1,27 @@
 ---
 layout: default
-title: navigating
-nav_order: 999
+title: search
+nav_order: 5
 parent: Vim
 grand_parent: Tools
 ---
-== Vim Notes - Searching
+
+## Vim Notes - Searching
 
 
-== Matching Patterns
-==== Setting Case Sensitivity per Search
+## Matching Patterns
+### Setting Case Sensitivity per Search
     \c      ignore case.
     \C      force case sensitivity.
 
-==== Smarter Default Case Sensitivity
+### Smarter Default Case Sensitivity
     if the pattern are all lowercase, is case insensitive
     if the pattern include upper case letters, is case sensitive.
 
-==== Use the \v Pattern Switch for Regex Searches
+### Use the \v Pattern Switch for Regex Searches
 
 
-=== Find character in current line
+### Find character in current line
     f 
     F backward
      
@@ -29,17 +30,19 @@ grand_parent: Tools
     
     Repeat ; (forward), (backword)
     
-=== Search current word
+### Search current word
     * (forward)
     # (backward)
     g* find all occurrences of current word
 
-=== Search using buffer value
+### Search using buffer value
 
-==== Disable Search Highlight
+    / ctrl + r + register name
+
+### Disable Search Highlight
     :noh (no highlight)
 
-=== Global Search
+### Global Search
     :g/pattern
     :g/vpattern     no escaping needed
     :g//            list search result

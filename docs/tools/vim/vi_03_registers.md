@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Vim Registers
-nav_order: 999
+nav_order: 3
 parent: Vim
 grand_parent: Tools
 ---
