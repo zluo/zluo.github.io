@@ -1,0 +1,36 @@
+==== Mongodb Notes
+===== Install in Ubuntu
+. Import the public key used by the package management system.
+
+    curl -fsSL https://www.mongodb.org/static/pgp/server-4.4.asc | apt-key add -
+
+. Create a list file for MongoDB
+
+    echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+
+. Reload local package database.
+
+   sudo apt-get update
+
+. Install the MongoDB packages
+
+ sudo apt-get update
+
+===== Start /Stop mongodb
+
+    systemctl start mongod.service
+    systemctl status mongod.service
+    systemctl enable mongod
+
+===== Verify mongodb start
+
+    sudo less /var/log/mongodb/mongod.log | grep port
+
+27017 is the default port the standalone mongod listens on.
+
+    mongo --eval 'db.runCommand({ connectionStatus: 1 })'
+
+
+
+===== Mongodb client
+    mongo

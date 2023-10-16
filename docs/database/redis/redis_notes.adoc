@@ -1,0 +1,104 @@
+=== Redis Notes
+
+==== Install Redis
+
+    sudo apt-get install redis-server
+
+==== Start Redis
+    redis-server
+
+==== Start Redis Client
+    redis-cli -c -p 7010 -a silanis
+
+Test
+
+   127.0.0.1:6379> ping
+   PONG
+
+==== Redis Configuration
+
+. Get all configuraton settings.
+
+    config get *
+
+. Edit Configuration
+
+    config set config_setting_name new_config_value
+
+==== Redis Data Type
+   * Strings
+
+    set name "what isn't"
+   * Hashes
+   * Lists
+   * Sets
+   * Sorted Sets
+
+===== Strings
+
+    set name "Zhan"
+    get name
+
+===== Hashes
+Hash is a collection of key-value pair. In redis it's a map of map
+
+    HMSET user:1 username zhan password bafosura
+    HGETALL user:1
+
+===== Lists
+    value is a list
+
+    lpush javapoint java
+    lrange javapoint 1 10
+
+===== Sets
+    value is a set
+
+    sadd key redis
+    sadd key sql
+
+    smembers key
+
+===== Sorted Sets
+
+    zadd tutorial 0 redis
+    zadd tutorail 1 sql
+
+    zrangebyscore 0 10
+
+
+===== Redis All Commands
+
+===== Redis keys
+. show all keys
+
+    keys *
+
+. show value of a key
+
+    mget key
+
+. del key
+
+===== Redis Keys with Commands
+
+
+===== Redis Transactions
+
+    MULTI
+
+    EXEC
+
+===== Redis Scripting
+
+
+===== Redis Connections
+
+
+===== Spring Data Redis Examples
+
+https://github.com/eugenp/tutorials/tree/master/persistence-modules/spring-data-redis
+
+===== Spring boot redis Cache Examples
+
+

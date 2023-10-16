@@ -263,9 +263,8 @@ Where did you wash? the boy thought. The village water supply was two streets do
 "I would like to take the great DiMaggio fishing," the old man said. "They say his father was a fisherman. Maybe he was as poor as we are and would understand."
 
 ### Mark 2023-10-08
-"The great Sisler's father was never poor and he, the father, was playing in the big leagues when he was my age."
 
-"When I was your age I was before the mast on a square rigged ship that ran to Africa and I have seen lions on the beaches in the evening."
+"When I was your age I was before the mast on a square rigged ship(大帆船) that ran to Africa and I have seen lions on the beaches in the evening."
 
 "I know. You told me."
 
@@ -320,6 +319,9 @@ He was asleep in a short time and he dreamed of Africa when he was a boy and the
 Usually when he smelled the land breeze he woke up and dressed to go and wake the boy. But tonight the smell of the land breeze came very early and he knew it was too early in his dream and went on dreaming to see the white peaks of the Islands rising from the sea and then he dreamed of the different harbours and roadsteads of the Canary Islands.
 
 He no longer dreamed of storms, nor of women, nor of great occurrences, nor of great fish, nor fights, nor contests of strength, nor of his wife. He only dreamed of places now and of the lions on the beach. They played like young cats in the dusk and he loved them as he loved the boy. He never dreamed about the boy. He simply woke, looked out the open door at the moon and unrolled his trousers and put them on. He urinated outside the shack and then went up the road to wake the boy. He was shivering with the morning cold. But he knew he would shiver himself warm and that soon he would be rowing.
+
+### Thu 12 Oct 2023 10:48:14 PM EDT
+
 
 The door of the house where the boy lived was unlocked and he opened it and walked in quietly with his bare feet. The boy was asleep on a cot in the first room and the old man could see him clearly with the light that came in from the dying moon. He took hold of one foot gently and held it until the boy woke and turned and looked at him. The old man nodded and the boy took his trousers from the chair by the bed and, sitting on the bed, pulled them on.
 

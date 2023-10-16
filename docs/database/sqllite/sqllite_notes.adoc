@@ -1,0 +1,28 @@
+== Sqlite3 notes
+
+. Install sqlite3
+
+     sudo apt-get install sqlite3   
+     sqlite3 --version   
+
+. Install sqlite3 browser
+
+       sudo apt-get install sqlitebrowser 
+
+. Open Sqlite browser
+
+        sqlite3
+
+. Create Databas
+
+        cd /home/src/gitlab/py_centris/database
+        sqlite3 centris.db
+
+     .help
+     .quit
+
+. Run sql file create tables
+
+    sqlite3 centris.db < create_database.sql
+
+

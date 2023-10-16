@@ -1,0 +1,12 @@
+##Designing Data Intensive Notes
+
+### The meaning of ACID
+**Atomicity**
+ means the work is unbreakable. If one write failed, all writes have to be discarded.
+
+**Consistency**
+ The idea of consistency depends on the applicaiotn's notion of invariants.
+ 
+**Isolation**
+ 
+
