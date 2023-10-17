@@ -1,8 +1,8 @@
 ---
 layout: default
 title: mysql note
-parent: Database
-permalink: /docs/database/mysql
+parent: mysql
+grand_parent: Database
 ---
 
 # Mysql Notes

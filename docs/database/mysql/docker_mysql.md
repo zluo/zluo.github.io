@@ -1,8 +1,8 @@
 ---
 layout: default
 title: mysql docker
-parent: Database
-permalink: /docs/database/mysql
+parent: mysql
+grand_parent: Database
 ---
 
 ## Install mysql in docker
