@@ -1,7 +1,7 @@
 ---
 layout: default
 title: JTD 
-nav_order: 20
+nav_order: 50
 has_children: true
 permalink: /docs/jtd
 ---
