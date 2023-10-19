@@ -1,7 +1,20 @@
-build an initscript and place it in /etc/init.d or /etc/rc/init.d and place a script named test in that.
+---
+layout: default
+title: Create a service script
+nav_order: 3 
+parent: Linux Command
+---
+## Create an Service script
+
+### Build an initscript
+
+    /etc/init.d or 
+    /etc/rc/init.d 
+
+and place a script named test in that.
 
 this is an example initscript:
-<pre>
+```bash
 #!/bin/sh
 ### BEGIN INIT INFO
 # Provides:          testone
@@ -28,7 +41,6 @@ do_stop()
    echo "stopping!"
 }
 
-
 case "$1" in
    start)
      do_start
@@ -39,15 +51,21 @@ case "$1" in
 esac
 
 exit 0
-</pre>
+```
 
-Create an user for the desired service.
+### Create an user for the desired service.
 
-Ensure the created user has full access to the binary you want to set up: /usr/bin/python.
+Ensure the created user has full access to the binary you want to set up:
 
-Adjust the variables: sudo vi /etc/init.d/example.
+    /usr/bin/python.
 
-Make sure the script is executable: chmod +x /etc/init.d/example.
+### Adjust the variables: 
+
+    sudo vi /etc/init.d/example.
+
+### Make sure the script is executable: 
+
+    chmod +x /etc/init.d/example.
 
 **Enable the daemon with**
    
@@ -59,40 +77,46 @@ Make sure the script is executable: chmod +x /etc/init.d/example.
     
 **Uninstall service**
 
+### Run a script at start up
 
-
-#Run a script at start up
-
-###Method 1: Add commands to /etc/rc.local
+#### Method 1: Add commands to /etc/rc.local
 
     vi /etc/rc.local
-with content like the following:
 
+with content like the following:
+```bash
     /path/to/my/script.sh || exit 1   # Added by me
     exit 0
+```
 
-### Method 2: Add an Upstart job (for systems older than 15.04)
-    Create /etc/init/myjob.conf
+#### Method 2: Add an Upstart job (for systems older than 15.04)
 
-    vi /etc/init/myjob.conf
-    with content like the following
+1.  Create file /etc/init/myjob.conf
 
+```bash
     description     "my job"
     start on startup
     task
     exec /path/to/my/script.sh
+```
 
 ### Method 3: Add an init script (obsolete)
-Create a new script in /etc/init.d/myscript.
+1.  Create a new script in /etc/init.d/myscript.
 
     vi /etc/init.d/myscript
-    (Obviously it doesn't have to be called "myscript".) In this script, do whatever you want to do. Perhaps just run the script you mentioned.
 
+```bash
     #!/bin/sh
     /path/to/my/script.sh
-Make it executable.
+```
 
-chmod ugo+x /etc/init.d/myscript
-Configure the init system to run this script at startup.
+2.  Make it executable.
 
-update-rc.d myscript defaults
+```bash
+    chmod ugo+x /etc/init.d/myscript
+```
+
+3.  Configure the init system to run this script at startup.
+```bash
+    update-rc.d myscript defaults
+```
