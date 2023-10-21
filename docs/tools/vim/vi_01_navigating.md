@@ -34,7 +34,9 @@ movements can be preceded by a count. e.g. `4j` moves down 4 lines.
 
 #### Move to begin | end of the line
     0   move to beginning of line
+    ^   move to beginning of non-blank line
     $   move to end of line
+    g_  move to end of non-blank line
 
 #### Move to begin | end of file
 
@@ -56,14 +58,15 @@ movements can be preceded by a count. e.g. `4j` moves down 4 lines.
 
 
 
-    Ctrl-D  move half-page down
-    Ctrl-U  move half-page up
-    Ctrl-B  page up
-    Ctrl-F  page dow
-    Ctrl-O  jump to last (older) cursor position
-    Ctrl-I  jump to next cursor position (after Ctrl-O)
-    Ctrl-Y  move view pane up
-    Ctrl-E  move view pane down
+    Ctrl-e  move one line down
+    Ctrl-y  move one line up
+    Ctrl-b  move back one full screen
+    Ctrl-f  move forward one full screen
+    Ctrl-d  move half-page down
+    Ctrl-u  move half-page up
+    
+    Ctrl-o  jump to last (older) cursor position
+    Ctrl-i  jump to next cursor position (after Ctrl-O)
 
 #### Search Navigating
 

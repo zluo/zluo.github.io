@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 社会学的想象力
+title: 练习的力量
 parent: Reading Notes 
 nav_order: 4
 ---
