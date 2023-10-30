@@ -8,6 +8,9 @@ grand_parent: Computer Language
 
 # Python Code base
 ---
+
+# File IO
+
 ### Read command line arguments
 
 ```python
@@ -68,3 +71,16 @@ import json
 f = open(self.jsonFile)
 data = json.load(f)
 ```
+
+### Read file line by line
+
+```python
+f = open(self.jsonFile, 'r')
+for line in f:    
+```
+
+```python
+f = open(self.jsonFile, 'r')
+lines =  f.readlines()
+```
+
