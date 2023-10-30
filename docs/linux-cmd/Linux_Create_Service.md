@@ -2,7 +2,7 @@
 layout: default
 title: Create a service script
 nav_order: 3 
-parent: Linux Command
+parent: Linux Command 
 ---
 ## Create an Service script
 

@@ -66,7 +66,7 @@ movements can be preceded by a count. e.g. `4j` moves down 4 lines.
     Ctrl-u  move half-page up
     
     Ctrl-o  jump to last (older) cursor position
-    Ctrl-i  jump to next cursor position (after Ctrl-O)
+    Ctrl-I  jump to next cursor position (after Ctrl-O)
 
 #### Search Navigating
 
@@ -100,3 +100,7 @@ movements can be preceded by a count. e.g. `4j` moves down 4 lines.
     g t
     g T
     n g t
+
+
+
+asdfasd word a wtr sgsd  asdfsfpg

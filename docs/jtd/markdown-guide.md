@@ -91,17 +91,17 @@ even when it comes at the beginning](.) of the line.
 | ok           | good `oreos`      | hmm   |
 | ok           | good `zoute` drop | yumm  |
 
-### There's a horizontal rule below this.
-
-* * *
+### There's a horizontal rule below this.   
+***
 
 ### Here is an unordered list:
 
 *   Item foo
-*   Item bar
-*   Item baz
+-   Item bar
++   Item baz
 *   Item zip
 
+ 
 ### And an ordered list:
 
 1.  Item one
@@ -265,6 +265,10 @@ Term2
 
 : Second description of Term1 and Term2,
   possibly more than one line
+
+Apple
+: Pomaceous fruit of plants of the genus Malus.
+: An american computer company.
 
 ### More code
 
