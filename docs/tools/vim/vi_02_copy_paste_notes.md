@@ -8,6 +8,10 @@ grand_parent: Tools
 
 ## Copy(Yank) and Paste
 
+### Paste from line range to current line
+
+    :81,84t.
+    
 ### Paste from clipboard 
 
 - Paste from clipboard
