@@ -1,6 +1,6 @@
 ---
 layout: default
-title: python code base
+title: Python Code Base
 nav_order: 1 
 parent: python
 grand_parent: Computer Language

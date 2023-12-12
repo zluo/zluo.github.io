@@ -27,6 +27,8 @@ grand_parent: Tools
     B   move to beginning of previous word before a whitespace
     E   move to end of word before a whitespace
     ge  backward to the end of word.
+    iB  inner block with {} /()
+    aw  select whole word
 
 {: .note }
 movements can be preceded by a count. e.g. `4j` moves down 4 lines.

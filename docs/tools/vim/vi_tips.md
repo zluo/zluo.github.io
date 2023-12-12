@@ -15,10 +15,6 @@ grand_parent: Tools
 
     .
 
-#### repeat last selection
-
-    gv
-
 #### repeat last replacement
 
     %s/aaa/~

@@ -63,300 +63,379 @@ first & means stdout and stderr, second & means run in background
 #### 1.1.3. Redirect to mutilple output
 **tee** - copy standard input to each file and also to standard output.
 
+```bash
    ls -lrt | tee xyz
+```
 
 #### 1.1.4. remote write to a file
+
+
+```bash
     echo 'Some Text' | ssh user@remotehost "cat > /remotefile.txt"
+```
+
+{:.note }
+equivalent to scp
 
 ### 1.2 Directory Navigation
 
-. Go to previous directory
+- Go to previous directory
 
+```bash
     cd -
+```
+- Go to $HOME directory
 
-. Go to $HOME directory
-
+```bash
     cd ~
+```
+- Go to dir, execute command and return to current dir
 
-. Go to dir, execute command and return to current dir
-
+```bash
     cd dir && command
+```
+- Put current dir on stack so you can popd back to it
 
-. Put current dir on stack so you can popd back to it
-
+```bash
     pushd .
     dirs
     cd ~1
     cd ~2
-
+```
 ## 2. List File (see Understating ls Notes)
 
-##= 2.1 create softlink
+### 2.1 create softlink
 
+```bash
     ln -s /path/to/file /path/to/symlink
+```
 
-Note:: first parameter is source, second parameter is target
+{:.note }
+first parameter is source, second parameter is target
 
 
-##= 2.2 find softlink
+### 2.2 find softlink
 
+```bash
     find  . -type l -ls
-
     ls -lR /path/to/folder | grep ^l
+```
 
-Note:: -R recursive
+{:.note }
+-R recursive
 
-##= 2.3. List files by date
+### 2.3. List files by date
 
+```bash
   ls –lrt
     -l use a long listing format
     -r reverse order while shorting
     -t sort by time
+```
 
-##= 2.4 List Tree
+### 2.4 List Tree
 
+```bash
    ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
 
-Note::
-   No way to remember such complicated command, add as a alias shortcut lt
    -R recurring
    -r reverse sort
+```
+### 2.5 Finding large files 
 
-##= 2.5 Finding large files works in AIX, Unix and Linux
-
-   find / -type f -size +10000 -exec ls -lrt {} \; | sort -n +4
-
-You can change "/" or "." or "/home" ....
+```bash
+   find . -type f -size +10000 -exec ls -lrt {} \; | sort -n +4
+```
 
 #### 2.5.1 Use the *-xdev* option of find so as not to traverse devices...
 
-    find / -xdev -type f -size +10000 -print | xargs du -ka | sort -rn
+```bash
+   find / -xdev -type f -size +10000 -print | xargs du -ka | sort -rn
+```
 
 Sometimes use 
     
+```bash
     du -kx|sort -n
+```
 
 On linux, following is the possible command:
 
+```bash
     find / -type f -size +20000k -exec ls -lh {} \; | awk '{ print $9 ": " $5 }'
+```
 
 To tweak the output and have the file sizes in a column, add this to the end:
 
+```bash
     | column -t
-
+```
 this just expands the tabs to even the columns out.
 
 
 
 
 
-##= 2.5.2 Finding all large directories
+### 2.5.2 Finding all large directories
 
+```bash
     find / -type d -size +50k
-
-Output:
-
-    /var/lib/dpkg/info
-    /var/log/ksymoops
-    /usr/share/doc/HOWTO/en-html
-    /usr/share/man/man3
+```
 
 
-##= 2.5.3 Find all files larger then ~10MB
+### 2.5.3 Find all files larger then ~10MB
 
+```bash
     find / -size +10240000c -exec du -h {} \;
+```
 
-##= 2.6. Only List Directory
+### 2.6. Only List Directory
 
+```bash
     ls -ld */ .*/
- 
     find –maxdepth 1 –type d
+```
+
+### 2.7  umask
+
+set file and directory permission. 022
+
+### 2.8      Accident press ctrl+s issue
+
+```bash
+ctrl+s lock screen, ctrl +q unlock
+```
+
+### 2.9   Cut
+
+ ```bash
+ cut -d ' ' -f 1 filename      get first colume of the output file.
+ ```
+
+### 2.11 Display command history
+
+```bash
+history
+```
+
+### 2.12 Run History command
+
+```bash
+!<history num>
+```
+
+### 2.13 Delete all folders and all files inside the folder.
+    
+```bash
+    rm –R *
+```
+    
+### 2.14 add user to group
+
+- Add User
+
+```bash
+useradd -G {group-name} username
+```
+- Delete User
+
+```bash
+userdel username
+```
+
+Details see  Howto.Linux add user to group.doc
+
+### 2.15 Tar – compress and extract files
+
+#### 2.15.1    To create a Tar file
+
+- Creates a GZIP-compressed Tar file of the name archive.tar.gz of all files with a .txt suffix.
+
+```bash
+     tar -cvzf archive.tar.gz *.txt
+```
+    -c create file
+    -z gzip
+    -f file
+
+- compress whole folder
+
+```bash
+    tar -zvcf g10m.tar.gz /home/zluo/f/g10m
+    gzip archive.tar
+```
+
+#### 2.15.2 To list files in a compressed Tar file
+
+```bash
+    tar -tvzf archive.tar.gz
+    -t list
+```
+#### 2.15.3 To extract files from a Tar file
+
+- Extracts all files from a compressed Tar file of the name archive.tar.gz.
+
+```bash
+    tar -xvzf archive.tar.gz
+    -x extract
+```
+
+-  To extract to a specific folder
+
+```bash
+tar -xzf archive.tar.gz -C ~/dest/
+```
+-C directory
+
+### 2.16 List open files
+```bash
+    lsof
+```
+### 2.17	Clean machine
+ 
+Fsck – check and repair a Linux file system, need umount the file system first.
+
+```bash
+fsck -Y > /dev/null
+```
+ 
+{:.note }
+/dev/null : no output
+
 
 
 ## 3.  Find and Search
 
-. find all java files, statistic the number of files
+### 3.1 find all java files, statistic the number of files
 
+```bash
     find -name *.java | wc -l
-
     wc -l    counts the lines
+```
 
-. find all java file, then find Exceptions in these files
+### 3.2 find all java file, then find Exceptions in these files
 
-
+```bash
     find -name *.java |xargs grep Exception
+```
 
-    Note:: xargs, send multiple parameters to the grep
+{:.note }
+xargs, send multiple parameters to the grep
 
 
-. xargs, build and execute command lines from standard input
+### 3.3 xargs, 
 
-. Grep two strings
+build and execute command lines from standard input, convert it into a command argument for another command.
 
+### 3.4  Grep two strings
+
+```bash
 grep “dm-0\|sda”
+```
 
 
 
 
 ## 4. Sed stream editor
 
+```bash
    sed s/day/night/ < old.file > new.file
+```
 
-    Note::
+{:.note }
+**s** for substitution;
+**/** slash as a delimiter. (|,_ also can be a delimiter)
 
-    . **s** for substitution
-    . / slash as a delimiter. (|,_ also can be a delimiter)
+### 4.1 using & as the matched string
 
-##= 4.1 using & as the matched string
-
+```bash
     sed 's/[a-z]*/(&)/
+```
 
-##= 4.2  using \1 to keep part of the pattern
+### 4.2  using \1 to keep part of the pattern
 
+```bash
     $ echo 'abcabcabc' | sed 's/\(ab\)c/\1/'
     ababcabc
     $ echo 'abcabcabc' | sed 's/\(ab\)c/\1/g'
     ababab
     $ echo 'abcabcabc' | sed 's/\(ab\)\(c\)/\1d\2/g'
     abdcabdcabdc
+```
+### 4.3 sed examples
+- Replace string1 with string2
+```bash
+sed 's/string1/string2/g'
+```
+
+- Modify anystring1 to anystring2
+```bash
+sed 's/\(.*\)1/\12/g'
+```
+
+- Remove comments and blank lines
+```bash
+sed '/ *=/d; /^ *$/d'
+```
+- Concatenate lines with trailing \
+```bash
+sed ':a; /\\$/N; s/\\\n//; ta'
+```
+
+- Remove trailing spaces from lines
+```bash
+sed 's/[ \t]*$//'
+```
+
+- Escape shell metacharacters active within double quotes
+```bash
+sed 's/\([\\`\\"$\\\\]\)/\\\1/g'
+```
+
+- Right align numbers
+```bash
+seq 10 | sed "s/^/      /; s/ *\(.\{7,\}\)/\1/"
+```
+
+- Print 1000th line
+```bash
+sed -n '1000p;1000q'
+```
+
+- Print lines 10 to 20
+```bash
+sed -n '10,20p;20q'
+```
+
+- Extract title from HTML web page
+```bash
+sed -n 's/.*<title>\(.*\)<\/title>.*/\1/ip;T;q'
+```
 
 
 
+## 5. Secure Copy (scp)
 
-#### List open files
-    lsof
-
-
-
-2.7      umask
-
-set file and directory permission. 022
-
-2.8      Accident press ctrl+s issue
-
-ctrl+s lock screen, ctrl +q unlock
-
-2.9      Cut
- cut -d ' ' -f 1 filename      get first colume of the output file.
-2.11Display command history
-
-history
-
-2.12Run History command
-
-!<history num>
-
-##=2.13 Delete all folders and all files inside the folder.
-    
-    rm –R *
-    
-##=2.14 add user to group
-
-**Add User**
-<pre>
-useradd -G {group-name} username
-</pre>
-
-**Delete User**
-<pre>
-userdel username
-</pre>
-
- 
-Details see  Howto.Linux add user to group.doc
-
-#### 2.15 Tar – compress and extract files
-
-####= 2.15.1    To create a Tar file
-
-Creates a GZIP-compressed Tar file of the name archive.tar.gz of all files with a .txt suffix.
-
-     tar -cvzf archive.tar.gz *.txt
-    -c create file
-    -z gzip
-    -f file
-
-    compress whole folder
-
-    tar -zvcf g10m.tar.gz /home/zluo/f/g10m
-
-    gzip archive.tar
-
-#### 2.15.2     To list files in a compressed Tar file
-
-    tar -tvzf archive.tar.gz
-    -t list
-
-#### 2.15.3    To extract files from a Tar file
-Extracts all files from a compressed Tar file of the name archive.tar.gz.
-
-    tar -xvzf archive.tar.gz
-    -x extract
-
-Note:: To extract to a specific folder
-    tar -xzf archive.tar.gz -C ~/dest/
-    -C directory
-
-2.16	Clean machine
- 
-Fsck – check and repair a Linux file system, need umount the file system first.
- 
-
-fsck -Y > /dev/null
- 
-/dev/null : no output
-
-
-
-
-2.17 Remote Control (setup vncserver)
-[root@roswell etc]= service vncserver start
-[root@roswell etc]= vncpasswd Password:
-
-Verify: 
-[root@roswell etc]= vncserver
-
-
-Setup display configuration
-
-
-From client station:
-
-telnet deimos
-login: marc
-password: silanis
-cd /home/alexei
-ls
-cd vnc-3.3.7-sparc_solaris_2.5
-perl vncserver :1
-
- 
-minimize the command window
-
-use vnc and type: deimos :1
-vnc passwd: silanis
-
- 
-login and use tcsh
-
-su root
-passwd = atlas
-exec tcsh -l
-
-
-
-
-Example syntax for Secure Copy (scp)
-What is Secure Copy?
+### 5.1 What is Secure Copy?
 scp allows files to be copied to, from, or between different hosts. It uses ssh for data transfer and provides the same authentication and same level of security as ssh.
-Examples
-Copy the file "foobar.txt" from a remote host to the local host
-$ scp your_username@remotehost.edu:foobar.txt /some/local/directory
 
-Copy the file "foobar.txt" from the local host to a remote host
+### 5.2 scp Examples
+
+- Copy the file "foobar.txt" from a remote host to the local host
+
+```bash
+$ scp your_username@remotehost.edu:foobar.txt /some/local/directory
+```
+
+- Copy the file "foobar.txt" from the local host to a remote host
+```bash
 $ scp foobar.txt your_username@remotehost.edu:/some/remote/directory
-Copy the directory "foo" from the local host to a remote host's directory "bar"
+```
+
+- Copy the directory "foo" from the local host to a remote host's directory "bar"
+```bash
 $ scp -r foo your_username@remotehost.edu:/some/remote/directory/bar
+```
 Copy the file "foobar.txt" from remote host "rh1.edu" to remote host "rh2.edu"silanis1
 
 $ scp your_username@rh1.edu:/some/remote/directory/foobar.txt \
@@ -641,30 +720,6 @@ Send popup to windows machine (off by default in XP sp2)
 text manipulation (Note sed uses stdin and stdout, so if you want to edit files, append <oldfile >newfile)
 
 
-sed 's/string1/string2/g'
-Replace string1 with string2
-
-sed 's/\(.*\)1/\12/g'
-Modify anystring1 to anystring2
-
-sed '/ *=/d; /^ *$/d'
-Remove comments and blank lines
-sed ':a; /\\$/N; s/\\\n//; ta'
-Concatenate lines with trailing \
-sed 's/[ \t]*$//'
-Remove trailing spaces from lines
-sed 's/\([\\`\\"$\\\\]\)/\\\1/g'
-Escape shell metacharacters active within double quotes
-seq 10 | sed "s/^/      /; s/ *\(.\{7,\}\)/\1/"
-Right align numbers
-sed -n '1000p;1000q'
-Print 1000th line
-
-sed -n '10,20p;20q'
-Print lines 10 to 20
-
-sed -n 's/.*<title>\(.*\)<\/title>.*/\1/ip;T;q'
-Extract title from HTML web page
 sort -t. -k1,1n -k2,2n -k3,3n -k4,4n
 Sort IPV4 ip addresses
 echo 'Test' | tr '[:lower:]' '[:upper:]'

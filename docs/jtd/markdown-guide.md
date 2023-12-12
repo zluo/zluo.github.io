@@ -3,7 +3,6 @@ layout: default
 title: Markdown Guide
 nav_order: 2
 ---
-
 # Markdown Guide
 {: .fs-6 }
 

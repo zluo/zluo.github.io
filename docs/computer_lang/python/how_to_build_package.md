@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How to build the package
+title: Build Package
 nav_order: 3
 parent: python
 grand_parent: Computer Language
