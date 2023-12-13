@@ -6,18 +6,9 @@ parent: Linux Command
 ---
 ## Bash Terminal Shortcuts Keys
 
-1.  All arguments of previous command
-
-    !*
-```bash
-$ mkdir one two three
-$ chmod 700 !*
-```
-
 
 | ShortCut | Description |
 |-----|--|
-| !*  | All arguments of previous command |
 |Alt +b |Back(Left) one word|
 |Ctrl + q|Allow output to the screen (if previously stopped)|
 |Alt + r |Cancel the changes and put back the line as it was in the history (revert)|
@@ -38,16 +29,12 @@ $ chmod 700 !*
 |Ctrl + a (Home)|Go to the beginning of the line|
 |Ctrl + e (End)|Go to the end of the line|
 |Ctrl + c|Interrupt/Kill whatever you are running (SIGINT)|
-|!$|Last argument of previous command|
 |Alt + l|Lower the case of every character from the cursor to the end of the current word|
 |Ctrl + n (Down arrow)|Next command|
 |Ctrl + y (yank)|Past the last thing to be cut|
 |Ctrl + p (Up arrow)|Previous command|
-|!abc:p|Print last command starting with abc|
 |Ctrl + r|Recall the last command including the specified characters(s)|
-|!!|Repeat the last command|
 |^abc^def|Run previous command, replacing abc with def|
-|!abc|Run the last command starting with abc|
 |Ctrl + D|Send an EOF marker, unless disable by an option, this will close the current shell (EXIT)|
 |Ctrl + z|Send the signal SIGTSTP to the current task, which suspends it|
 |Ctrl + s|Stop output to the screen (for long running vervose commands)|
@@ -55,7 +42,28 @@ $ chmod 700 !*
 |Ctrl + t|Swap the last two characters before the cursor|
 |Esc + t|Swap the last two words before the cursor|
 |Tab|Tab completion for file/directory names|
-|Ctrl + xx|Toggle between the start of line and current cursor position|
-|Ctrl + _|Undo|
-|Alt + u|Upper the case (capitalize) of every character from the cursor to the end of the current word.|
-|||
+|Ctrl + xx| Toggle between the start of line and current cursor position|
+|Ctrl + _| Undo |
+|Alt + u | Upper the case (capitalize) of every character from the cursor to the end of the current word.|
+
+## Running Commands
+| ShortCut | Description |
+|-----|--|
+|!*  | All arguments of previous command |
+!^   | first argument from previous command|
+|!$  |Last argument of previous command|
+|!:n-m  |The Nth-Mth argument of previous command|
+|!!:n |where n is the 0-based position of the argument you want.|
+|!n | command number n from history |
+|!pattern | most recent command matching pattern |
+|!!:s/find/replace | last command, substitute find with replace|
+|!!|Repeat the last command|
+|!abc:p|Print last command starting with abc|
+|!abc|Run the last command starting with abc|
+
+1.  All arguments of previous command (!*)
+
+```bash
+$ mkdir one two three
+$ chmod 700 !*
+```
