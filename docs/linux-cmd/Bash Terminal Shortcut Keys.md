@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Command Line Editing
+title: Bash Shortcuts Keys
 nav_order: 3 
 parent: Linux Command 
 ---
@@ -29,6 +29,7 @@ parent: Linux Command
 |Alt + Ctrl +  f |Forward (right) one word|
 
 ### History Operations
+
 | ShortCut | Description |
 |-----|--|
 |Ctrl + p (Up arrow)|Previous command|
@@ -38,6 +39,7 @@ parent: Linux Command
 |Ctrl + c|Interrupt/Kill whatever you are running (SIGINT)|
 
 ### Case Sensitive
+
 | ShortCut | Description |
 |-----|--|
 |Alt + c | Capitalize the character under the cursor and move to the end of the word|
@@ -45,6 +47,7 @@ parent: Linux Command
 |Alt + u | Upper the case (capitalize) of every character from the cursor to the end of the current word.|
 
 ### Copy paste
+
 | ShortCut | Description |
 |-----|--|
 |Ctrl + k|Cut the line after the cursor to the clipboard|
