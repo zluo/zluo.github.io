@@ -81,6 +81,7 @@ parent: Linux Command
 |Ctrl + _| Undo |
 
 ## Running Commands
+
 | ShortCut | Description |
 |-----|--|
 |!*  | All arguments of previous command |
