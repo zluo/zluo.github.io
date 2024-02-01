@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Markdown Guide
-nav_order: 2
+nav_order: 92
 ---
 # Markdown Guide
 {: .fs-6 }
@@ -29,16 +29,21 @@ jtd.addEvent(toggleDarkMode, 'click', function(){
 </script>
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
+```markdown
+Text can be **bold**, _italic_, or ~~strikethrough~~.
+```
 
 [Link to another page]({{site.baseurl}}/).
 
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+```markdown
+[Link to another page]({{site.baseurl}}/).
+```
 
 # [](#header-1)Header 1
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+```markdown
+# [](#header-1)Header 1
+```
 
 ## [](#header-2)Header 2
 
