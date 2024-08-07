@@ -84,3 +84,17 @@ f = open(self.jsonFile, 'r')
 lines =  f.readlines()
 ```
 
+
+### Fix encoding issues
+
+```python
+from ftfy import fix_text
+incorrect_string = 'Xiang Hotpot-Brooklynä¸¨æµ·é²œè‡ªåŠ©ç«é”…é¤åŽ…ä¸¨All You Can Eat Restaurant'
+print("Incorrectly Decoded String:", incorrect_string)
+
+# Decode again using the correct encoding (UTF-8)
+corrected_string = fix_text(incorrect_string)
+print("Corrected String:", corrected_string)
+```
+
+
