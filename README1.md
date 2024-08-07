@@ -42,3 +42,10 @@
 ```
     http://127.0.0.1:4000/
 ```
+
+7. Troubleshooting Permission Deny
+```
+cd /src/lab/github_pages/zluo.github.io
+sudo rm -r _site
+sudo rm -r .jelly_cache
+```
