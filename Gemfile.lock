@@ -75,6 +75,8 @@ GEM
       octokit (>= 4, < 7, != 4.4.0)
     jekyll-include-cache (0.2.1)
       jekyll (>= 3.7, < 5.0)
+    jekyll-jupyter-notebook (0.0.6)
+      jekyll
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
     jekyll-seo-tag (2.8.0)
@@ -144,6 +146,7 @@ DEPENDENCIES
   html-proofer (~> 5.0)
   jekyll-github-metadata (>= 2.15)
   jekyll-include-cache
+  jekyll-jupyter-notebook
   just-the-docs!
 
 BUNDLED WITH
